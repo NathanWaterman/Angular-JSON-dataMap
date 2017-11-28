@@ -1,0 +1,22 @@
+<!-- ng-repeat individual sections -->
+<div class="aspire-body-container" ng-repeat="(k,v) in ambitionSecId(ambitionSectionData)">
+    <div class="container aspire-body">
+        <div class="row">
+            <div class="col-xs-12">
+                <p>{{v.SectionSubheading}}</p>
+                <h2>{{v.OnPageSectionHeading}}</h2>
+            </div>
+            <div class="row">
+                <!-- filter IDs for Section and Section content. ng-repeat section content data to matching section ID -->
+                 <div class="col-xs-6" ng-repeat="c in SectionContentData | filter:{'aId':v.ID}: true">
+                    <p>{{c.ContentLabel}}</p>
+                    <h4>{{c.Title}}</h4>
+                    <p>{{c.ContentDescription}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="aspire-body-border-container">
+    </div>
+</div>
+
